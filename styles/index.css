@@ -1,0 +1,120 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: linear-gradient(287.56deg, #c2e9fb 0%, #a1c4fd 100%);
+}
+
+body {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5rem;
+}
+
+body,
+button,
+input {
+  font-family: "DM Sans", sans-serif;
+}
+
+.hide {
+   display: none;
+}
+
+#app {
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
+  padding: 4.8rem 6.4rem 6.4rem;
+  width: min(42.8rem, 90%);
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+h1,
+h2,
+p {
+  color: #34355b;
+}
+
+#text {
+  display: inline-block;
+  opacity: 0.8;
+}
+
+form {
+  margin-top: 4.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+input,
+button {
+  border: none;
+  padding: 1.6rem;
+}
+
+input {
+  width: 6rem;
+  background-color: #dce2e9;
+  border-radius: 0.4rem 0 0 0.4rem;
+  -webkit-border-radius: 0.4rem 0 0 0.4rem;
+  -moz-border-radius: 0.4rem 0 0 0.4rem;
+  -ms-border-radius: 0.4rem 0 0 0.4rem;
+  -o-border-radius: 0.4rem 0 0 0.4rem;
+}
+
+input:focus,
+input:hover,
+button:hover {
+  outline: none;
+  filter: brightness(1.04);
+  -webkit-filter: brightness(1.04);
+}
+
+button {
+  color: #fff;
+  background-color: #7879f1;
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-border-radius: 0 0.4rem 0.4rem 0;
+  -moz-border-radius: 0 0.4rem 0.4rem 0;
+  -ms-border-radius: 0 0.4rem 0.4rem 0;
+  -o-border-radius: 0 0.4rem 0.4rem 0;
+}
+
+#screen-two h2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 3.3rem;
+}
+
+#screen-two button {
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
