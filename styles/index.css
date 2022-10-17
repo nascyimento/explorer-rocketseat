@@ -1,0 +1,215 @@
+:root {
+  font-size: 62.5%;
+  --fc-heading: #0c3440;
+  --fc-label: #00453a;
+  --fc-input: rgba(73, 80, 87, 0.5);
+  --bg-input: #dce2e9;
+  --outline: #02799d;
+  --border: rgba(73, 80, 87, 0.3);
+  --placeholder: #49505780;
+  --fc-button: #fff;
+  --bg-button: #02799d;
+  --bg-button-dark: #00617e;
+  --error: #f03e3e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+body {
+  background-color: #040624;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+input,
+button {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.container {
+  min-height: 100vh;
+  margin-top: -5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 4.8rem 6.4rem 6.4rem;
+  background-color: #fff;
+  max-width: 42.8rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+  color: var(--fc-heading);
+  text-align: center;
+}
+
+form legend {
+  margin-bottom: 3.2rem;
+}
+
+form .inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.input-wrapper label {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: var(--fc-label);
+
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.input-wrapper input {
+  width: 100%;
+  background-color: var(--bg-input);
+  padding: 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--fc-input);
+}
+
+.input-wrapper input:focus,
+form button:focus {
+  outline: 2px solid var(--outline);
+}
+
+form button {
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  color: #fff;
+  background-color: var(--bg-button);
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  -o-transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: var(--bg-button-dark);
+}
+
+.modal-wrapper.open {
+  visibility: initial;
+  opacity: initial;
+}
+
+.modal-wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+.modal {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+}
+
+.close:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.close img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.alert-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--error);
+  text-align: center;
+  transform: translateY(-100%);
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+}
+
+.alert-box.open {
+  transform: initial;
+  -webkit-transform: initial;
+  -moz-transform: initial;
+  -ms-transform: initial;
+  -o-transform: initial;
+}
+
+.alert-box p {
+  color: #fff;
+  font-weight: 700;
+  padding: .8rem 0;
+}

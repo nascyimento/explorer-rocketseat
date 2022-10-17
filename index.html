@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./styles/index.css">
+   <script src="./scripts/main.js" type="module" defer></script>
+   <title>Calculadora de IMC</title>
+</head>
+
+<body>
+   <div class="container">
+      <main class="card">
+         <form>
+            <fieldset>
+               <legend class="title">Cálculo de <abbr title="Índice de Massa Corporal">IMC</abbr></legend>
+               <div class="inputs-wrapper">
+                  <div class="input-wrapper">
+                     <label for="weight">Peso (kg)</label>
+                     <input type="text" id="weight" placeholder="75.00" maxlength="5">
+                  </div>
+                  <div class="input-wrapper">
+                     <label for="height">Altura (cm)</label>
+                     <input type="text" id="height" placeholder="170" maxlength="3">
+                  </div>
+               </div>
+               <button>Calcular IMC <img src="./assets/arrow.svg" alt="Seta apontando para a direita"></button>
+            </fieldset>
+         </form>
+      </main>
+   </div>
+   <div class="modal-wrapper">
+      <div class="modal card">
+         <button class="close"><img src="./assets/x.svg" alt="X, botão para fechar o menu"></button>
+         <h2 class="title">Seu <abbr title="Índice de Massa Corporal">IMC</abbr> é de <span></span></h2>
+      </div>
+   </div>
+   <div class="alert-box">
+      <p>Digite dados válidos!</p>
+   </div>
+</body>
+
+</html>
