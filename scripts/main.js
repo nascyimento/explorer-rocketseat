@@ -30,14 +30,11 @@ function toggleSound() {
   buttonSoundOn.classList.toggle("hidden");
 }
 
-
-
 buttonPlay.addEventListener("click", timer.play);
 buttonPause.addEventListener("click", timer.pause);
 buttonStop.addEventListener("click", timer.stop);
 buttonSetTime.addEventListener("click", timer.setTime);
 buttonSoundOn.addEventListener("click", toggleSound);
 buttonSoundOff.addEventListener("click", timer.toggleSound);
-
 
 window.onload = timer.setTime

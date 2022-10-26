@@ -41,7 +41,7 @@ export default function Timer({
   }
 
   function setTime() {
-    minutes = prompt("Defina o tempo...") || "00";
+    minutes = prompt("Defina o tempo...") || minutes;
     minutesDisplay.textContent = minutes.padStart(2, "00");
   }
 
