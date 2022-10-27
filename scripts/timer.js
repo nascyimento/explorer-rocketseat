@@ -1,17 +1,11 @@
 import { buttonPressAudio, kitchenTimer } from "./sounds.js";
 
-export default function Timer({
-  minutes,
-  timerTimeout,
-  minutesDisplay,
-  secondsDisplay,
-  buttonPlay,
-  buttonPause,
-  buttonSetTime,
-  buttonStop,
-}) {
-  let starting = true,
-    isRunning = false;
+export default function Timer({ buttonPlay, buttonPause, buttonSetTime, buttonStop, }) {
+  const minutesDisplay = document.querySelector("#minutes");
+  const secondsDisplay = document.querySelector("#seconds");
+
+  let starting = true, isRunning = false;
+  let timerTimeout, minutes = "0";
 
   function play() {
     if (minutesDisplay.textContent > 0 || secondsDisplay.textContent > 0) {
@@ -46,9 +40,14 @@ export default function Timer({
     isRunning = false;
   }
 
-  function setTime() {
-    minutes = prompt("Defina o tempo...") || minutes;
-    minutesDisplay.textContent = minutes.padStart(2, "00");
+  function setTime(minutesTime) {
+    minutes = minutesTime || minutes;
+    if (!isNaN(minutes)) {
+      minutesDisplay.textContent = minutes.padStart(2, "0");
+    } else {
+      minutesDisplay.textContent = "00";
+    }
+    
   }
 
   function countDown() {
@@ -62,7 +61,7 @@ export default function Timer({
 
       if (minutes <= 0 && seconds == 0) {
         stop();
-        kitchenTimer.play()
+        kitchenTimer.play();
         return;
       }
 
@@ -80,20 +79,11 @@ export default function Timer({
   }
 
   function handleSpaceBarPress() {
-    if (isRunning) {
-      pause();
-    } else {
-      play();
-    }
+    if (isRunning) pause();
+    else play();
+
     buttonPressAudio.play();
   }
 
-  return {
-    play,
-    pause,
-    stop,
-    setTime,
-    countDown,
-    handleSpaceBarPress,
-  };
+  return { play, pause, stop, setTime, countDown, handleSpaceBarPress };
 }
