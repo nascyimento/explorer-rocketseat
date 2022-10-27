@@ -1,0 +1,86 @@
+#modal-wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+#modal-wrapper.open {
+  visibility: initial;
+  opacity: initial;
+  z-index: 2;
+  -webkit-transform: initial;
+  -moz-transform: initial;
+  -ms-transform: initial;
+  -o-transform: initial;
+}
+
+#modal-wrapper.open #modal {
+  transform: initial;
+}
+
+#modal {
+  background-color: var(--primary-color-dark);
+  padding: 1.8rem 4rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+}
+
+#modal label {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+#modal div {
+  display: flex;
+  justify-content: center;
+}
+
+#modal input {
+  /* color: var(--text-color); */
+  background-color: var(--text-color);
+  padding: 1.2rem;
+  border-radius: 0.8rem 0 0 0.8rem;
+  -webkit-border-radius: 0.8rem 0 0 0.8rem;
+  -moz-border-radius: 0.8rem 0 0 0.8rem;
+  -ms-border-radius: 0.8rem 0 0 0.8rem;
+  -o-border-radius: 0.8rem 0 0 0.8rem;
+  text-align: center;
+  width: 5rem;
+  font-weight: 700;
+}
+
+#modal button {
+  padding: 1.2rem 2.2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: 700;
+  border-radius: 0 0.8rem 0.8rem 0;
+  -webkit-border-radius: 0 0.8rem 0.8rem 0;
+  -moz-border-radius: 0 0.8rem 0.8rem 0;
+  -ms-border-radius: 0 0.8rem 0.8rem 0;
+  -o-border-radius: 0 0.8rem 0.8rem 0;
+}
+
+#modal button:hover {
+  filter: brightness(0.85);
+  -webkit-filter: brightness(0.85);
+}
