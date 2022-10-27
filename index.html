@@ -9,13 +9,26 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="./styles/index.css">
+   <link rel="shortcut icon" href="./public/favicon.svg" type="image/svg">
    <script src="./scripts/main.js" type="module" defer></script>
    <title>Focus Timer</title>
 </head>
 
 <body>
+   <div id="modal-wrapper">
+      <div id="modal">
+         <form>
+            <label for="input-minutes">
+               Defina os minutos
+            </label>
+            <div>
+               <input type="text" id="input-minutes">
+               <button>Definir</button>
+            </div>
+         </form>
+      </div>
+   </div>
    <main>
-
       <div id="timer">
          <span id="minutes">
             00
@@ -104,7 +117,6 @@
             </button>
          </div>
       </div>
-
    </main>
 </body>
 
