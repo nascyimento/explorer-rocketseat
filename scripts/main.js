@@ -10,8 +10,10 @@ const buttonSoundOff = document.querySelector("#sound-off");
 const minutesDisplay = document.querySelector("#minutes");
 const secondsDisplay = document.querySelector("#seconds");
 
-let timerTimeout, minutes;
-let seconds = 0;
+let timerTimeout,
+  minutes = "0",
+  seconds = 0,
+  isRunning = false;
 
 const timer = Timer({
   minutes,
@@ -22,7 +24,7 @@ const timer = Timer({
   buttonPlay,
   buttonPause,
   buttonSetTime,
-  buttonStop
+  buttonStop,
 });
 
 function toggleSound() {
@@ -37,4 +39,9 @@ buttonSetTime.addEventListener("click", timer.setTime);
 buttonSoundOn.addEventListener("click", toggleSound);
 buttonSoundOff.addEventListener("click", timer.toggleSound);
 
-window.onload = timer.setTime
+onload = timer.setTime;
+window.addEventListener("keydown", (evt) => {
+  if (evt.key === " ") {
+    timer.handleSpaceBarPress();
+  }
+});

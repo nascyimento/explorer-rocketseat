@@ -8,7 +8,8 @@ export default function Timer({
   buttonSetTime,
   buttonStop,
 }) {
-  let starting = true;
+  let starting = true,
+    isRunning = false;
 
   function play() {
     if (minutesDisplay.textContent > 0 || secondsDisplay.textContent > 0) {
@@ -16,14 +17,16 @@ export default function Timer({
       buttonPause.classList.remove("hidden");
       buttonSetTime.classList.add("hidden");
       buttonStop.classList.remove("hidden");
-      countDown();
       starting = false;
+      isRunning = true;
+      countDown();
     }
   }
 
   function pause() {
     buttonPlay.classList.remove("hidden");
     buttonPause.classList.add("hidden");
+    isRunning = false;
     clearInterval(timerTimeout);
   }
 
@@ -38,6 +41,7 @@ export default function Timer({
     minutesDisplay.textContent = String(minutes).padStart(2, "00");
     secondsDisplay.textContent = "00";
     starting = true;
+    isRunning = false;
   }
 
   function setTime() {
@@ -72,11 +76,20 @@ export default function Timer({
     timeDisplay.textContent = String(currentTime - 1).padStart(2, "00");
   }
 
+  function handleSpaceBarPress() {
+    if (isRunning) {
+      pause();
+    } else {
+      play();
+    }
+  }
+
   return {
     play,
     pause,
     stop,
     setTime,
     countDown,
+    handleSpaceBarPress,
   };
 }
