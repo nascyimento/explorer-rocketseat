@@ -1,3 +1,5 @@
+import { buttonPressAudio, kitchenTimer } from "./sounds.js";
+
 export default function Timer({
   minutes,
   timerTimeout,
@@ -60,6 +62,7 @@ export default function Timer({
 
       if (minutes <= 0 && seconds == 0) {
         stop();
+        kitchenTimer.play()
         return;
       }
 
@@ -82,6 +85,7 @@ export default function Timer({
     } else {
       play();
     }
+    buttonPressAudio.play();
   }
 
   return {
